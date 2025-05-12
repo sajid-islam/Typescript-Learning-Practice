@@ -59,4 +59,68 @@ function getRolePermission(role) {
         return ["none"];
     }
 }
-console.log(getRolePermission(Roles.Viewer));
+// console.log(getRolePermission(Roles.Viewer));
+/**
+ * 3. Handle Mixed ID List (Union + Array)
+You have a list of user IDs that can be either numbers or strings.
+Example:
+
+const userIds = [1, "2", 3, "4", 5];
+Write a function printUserIds(userIds: (number | string)[]): void
+This should loop over the array and print each ID with a message:
+"User ID: 1", "User ID: 2", etc.
+ */
+var userIds = [1, "ab", 3, "4"];
+var modifiedIds = [];
+function printUserIds(UserIds) {
+    for (var i = 0; i < UserIds.length; i++) {
+        var id = UserIds[i];
+        if (typeof id === "number") {
+            modifiedIds.push(id / 2);
+        }
+        if (typeof id === "string") {
+            modifiedIds.push(id.toUpperCase());
+        }
+    }
+    console.log(modifiedIds);
+}
+printUserIds(userIds);
+// MODERN VERSION OF PROBLEM 3
+var userIds2 = [1, "User2", 5423, "admin"];
+var printUserIds2 = function (userIds2) {
+    var modifiedIds2 = userIds2.map(function (id) {
+        return typeof id === "number" ? id / 2 : id.toUpperCase();
+    });
+    console.log(modifiedIds2);
+};
+printUserIds2(userIds2);
+/**
+ * 4. Advanced Tuple - Student Record
+Create a tuple type called StudentRecord:
+
+name (string)
+
+age (number)
+
+GPA (number)
+
+isGraduated (boolean)
+
+Then create a variable of type StudentRecord and print each value nicely.
+
+📝 Example:
+
+Sajid, 20 years old, has a GPA of 3.8. Graduated: No
+
+ */
+var studentRecord;
+studentRecord = ["Sajid", 21, 3.13, false];
+studentRecord = ["Masum", 21, 3.43, true];
+studentRecord = ["Saimun", 24, 3.33, true];
+var studentRecordVar = "".concat((studentRecord[0],
+    studentRecord[1],
+    "years old, has a GPA of",
+    studentRecord[2],
+    "Graduated",
+    studentRecord[3]));
+console.log(studentRecordVar);
