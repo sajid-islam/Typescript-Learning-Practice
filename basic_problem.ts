@@ -132,22 +132,17 @@ Sajid, 20 years old, has a GPA of 3.8. Graduated: No
  */
 
 let studentRecord: [
-    name: string,
+    studentName: string,
     age: number,
     GPA: number,
     isGraduated: boolean
 ];
 studentRecord = ["Sajid", 21, 3.13, false];
-studentRecord = ["Masum", 21, 3.43, true];
-studentRecord = ["Saimun", 24, 3.33, true];
 
-const studentRecordVar = `${
-    (studentRecord[0],
-    studentRecord[1],
-    "years old, has a GPA of",
-    studentRecord[2],
-    "Graduated",
-    studentRecord[3])
-}`;
+const [studentName, age, GPA, isGraduated] = studentRecord;
 
-console.log(studentRecordVar);
+console.log(
+    `${studentName},${age} years old, has GPA of ${GPA}. Graduated ${
+        isGraduated ? "Yes" : "No"
+    }`
+);

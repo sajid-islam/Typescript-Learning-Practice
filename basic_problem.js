@@ -115,12 +115,5 @@ Sajid, 20 years old, has a GPA of 3.8. Graduated: No
  */
 var studentRecord;
 studentRecord = ["Sajid", 21, 3.13, false];
-studentRecord = ["Masum", 21, 3.43, true];
-studentRecord = ["Saimun", 24, 3.33, true];
-var studentRecordVar = "".concat((studentRecord[0],
-    studentRecord[1],
-    "years old, has a GPA of",
-    studentRecord[2],
-    "Graduated",
-    studentRecord[3]));
-console.log(studentRecordVar);
+var studentName = studentRecord[0], age = studentRecord[1], GPA = studentRecord[2], isGraduated = studentRecord[3];
+console.log("".concat(studentName, ",").concat(age, " years old, has GPA of ").concat(GPA, ". Graduated ").concat(isGraduated ? "Yes" : "No"));
