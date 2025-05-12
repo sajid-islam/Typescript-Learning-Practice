@@ -1,0 +1,5 @@
+BASIC TYPES OF TYPESCRIPT
+- Number, String, Boolean
+- Arrays, Tuples
+- Unknown, Never, Void, Any
+- enums
