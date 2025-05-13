@@ -91,3 +91,41 @@ function printPersonInfo(name: string, age: number, gender: Gender) {
 }
 
 printPersonInfo("Sajid", 20, "male");
+
+/**
+ * 5. Intersection Types for Profile and Settings
+Create two types:
+
+Profile → username (string), email (string)
+
+Settings → theme ("dark" | "light"), isSubscribed (boolean)
+
+Then create a full user object by combining both types using intersection (&).
+Example output:
+
+{
+  username: "Sajid",
+  email: "sajid@example.com",
+  theme: "dark",
+  isSubscribed: true
+}
+ */
+
+type Profile = {
+    username: string;
+    email: string;
+};
+
+type Settings = {
+    theme: "light" | "dark";
+    isSubscribed: boolean;
+};
+
+type User = Profile & Settings;
+
+const user: User = {
+    username: "sajid",
+    email: "sajid941@gmail.com",
+    theme: "dark",
+    isSubscribed: false,
+};
